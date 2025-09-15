@@ -624,10 +624,30 @@ pre code {
 }
 
 .row {
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    border-radius: 15px;
+    background-color: #343A40;
+
+}
+
+.row ul {
+
+    background-color: #3f464d;
+    border-radius: 10px;
+}
+
+.row ul li {
+    color: white;
+    padding: 5px;
+}
+
+.row h2 {
+    color: white;
 }
 
 .no-gutters {
@@ -5537,8 +5557,8 @@ a.badge-dark.focus {
 }
 
 .jumbotron h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
