@@ -3,6 +3,7 @@
         <p>
             © {{ __('misc.copyright') }}
         </p>
+        <a href="/contact">Contact</a>
     </div>
 </footer>
 
