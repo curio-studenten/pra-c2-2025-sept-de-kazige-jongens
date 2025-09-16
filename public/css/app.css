@@ -11095,3 +11095,9 @@ footer a:hover {
 .contact-form button {
     cursor: pointer;
 }
+
+.types {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: .5rem;
+}
