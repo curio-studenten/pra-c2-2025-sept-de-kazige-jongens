@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer("brand_contact_number")->nullable()->default(null);
             $table->timestamps();
         });
     }
