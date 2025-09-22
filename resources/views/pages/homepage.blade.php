@@ -20,7 +20,17 @@
     ?>
 
     <div class="container">
-        <!-- Example row of columns -->
+        
+        @foreach($brands as $brand)
+            {{ $brand->name }}: {{ $brand->name }}
+            @php
+            static $i=1;
+            if($i==10) break;
+            $i++;
+            @endphp
+            <br>
+        @endforeach
+
         <div class="row">
 
             @foreach($brands->chunk($chunk_size) as $chunk)
