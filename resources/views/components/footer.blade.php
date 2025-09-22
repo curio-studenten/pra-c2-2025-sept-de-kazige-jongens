@@ -38,9 +38,6 @@
     </div>
 </footer>
 
-
-
-<!-- analytics code -->
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-30506707-1']);
