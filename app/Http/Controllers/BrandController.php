@@ -13,7 +13,7 @@ class BrandController extends Controller
     {
 
         $brand = Brand::findOrFail($brand_id);
-        $topManuals = DB::table('manuals')
+        $topManuals = DB::table('manuals')->where('brand_id', $brand_id)->get()
             ->orderBy('count', 'desc')
             ->limit(5)
             ->get();
