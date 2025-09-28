@@ -18,10 +18,10 @@
     <div class="types">
         @foreach ($manuals as $manual)
             <div class="type">
-                    <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/"
-                       alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                    <a href="{{ $manual->url }}" target="new" alt="{{ $manual->name }}"
-                       title="{{ $manual->name }}">{{ $manual->name }}</a>
+                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/"
+                   title="{{ $manual->name }}">{{ $manual->name }}</a>
+                <a href="{{ $manual->originUrl }}" target="new"
+                   title="{{ $manual->name }}">{{ $manual->name }}</a>
             </div>
         @endforeach
     </div>
