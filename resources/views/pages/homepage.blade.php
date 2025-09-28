@@ -20,7 +20,7 @@
     ?>
 
     <div class="container">
-        
+
         @foreach($brands as $brand)
             {{ $brand->name }}: {{ $brand->name }}
             @php
@@ -30,9 +30,8 @@
             @endphp
             <br>
         @endforeach
-
+        <h1 >Name: {{$name}}</h1>
         <div class="row">
-
             @foreach($brands->chunk($chunk_size) as $chunk)
                 <div class="col-md-4">
 
