@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Manual;
 use Illuminate\Support\Facades\DB;
+use function Webmozart\Assert\Tests\StaticAnalysis\length;
 
 class BrandController extends Controller
 {
@@ -17,9 +18,11 @@ class BrandController extends Controller
             ->orderBy('count', 'desc')
             ->limit(5)
             ->get();
+        $manuals = DB::table('manuals')->where('brand_id', $brand_id)->get();
         return view('pages/manual_list', [
             "brand" => $brand,
-            "manuals" => $topManuals
+            "top_manuals" => $topManuals,
+            "manuals" => $manuals
         ]);
 
     }
