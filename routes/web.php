@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,9 +38,17 @@ use App\Http\Controllers\LocaleController;
 
 // Homepage
 Route::get('/', function () {
-    $name = "Roy";
+    $results = DB::table('manuals')
+        ->join('brands', 'manuals.brand_id', '=', 'brands.id')
+        ->select(
+            'brands.name as brand_name',
+            'manuals.name as manual_type',
+            DB::raw("CONCAT(brands.name, ': ', manuals.name) as display_name")
+        )
+        ->limit(10)
+        ->get();
     $brands = Brand::all()->sortBy('name');
-    return view('pages.homepage', compact('brands','name'));
+    return view('pages.homepage', ['topManuals' => $results, 'brands' => $brands]);
 })->name('home');
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);

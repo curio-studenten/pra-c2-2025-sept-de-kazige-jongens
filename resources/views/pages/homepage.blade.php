@@ -14,23 +14,18 @@
 
 
     <?php
-    $size = count($brands);
+    $size = count($topManuals);
     $columns = 3;
     $chunk_size = ceil($size / $columns);
     ?>
 
     <div class="container">
-
-        @foreach($brands as $brand)
-            {{ $brand->name }}: {{ $brand->name }}
-            @php
-            static $i=1;
-            if($i==10) break;
-            $i++;
-            @endphp
-            <br>
+        <h2>Top 10 handleidingen</h2>
+        @foreach($topManuals as $manual)
+            <div>
+                <div>{{ $manual->display_name }}</div>
+            </div>
         @endforeach
-        <h1 >Name: {{$name}}</h1>
         <div class="row">
             @foreach($brands->chunk($chunk_size) as $chunk)
                 <div class="col-md-4">

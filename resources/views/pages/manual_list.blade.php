@@ -15,17 +15,27 @@
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
 
-    <div class="types">
-        @foreach ($manuals as $manual)
-            <div class="type">
-                @if ($manual->locally_available)
+    <div class="flex flex-column">
+        <div>
+            <h2>Top 5 populaire handleidingen</h2>
+            @foreach ($top_manuals as $manual)
+                <div class="flex flex-column">
                     <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/"
-                       alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                    ({{$manual->filesize_human_readable}})
-                @else
-                    <a href="{{ $manual->url }}" target="new" alt="{{ $manual->name }}"
                        title="{{ $manual->name }}">{{ $manual->name }}</a>
-                @endif
+                    <a href="{{ $manual->originUrl }}" target="new"
+                       title="{{ $manual->name }}">{{ $manual->name }}</a>
+                </div>
+            @endforeach
+        </div>
+        <h2>Handleidingen</h2>
+        @foreach($manuals as $manual)
+            <div>
+                <div class="type">
+                    <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/"
+                       title="{{ $manual->name }}">{{ $manual->name }}</a>
+                    <a href="{{ $manual->originUrl }}" target="new"
+                       title="{{ $manual->name }}">{{ $manual->name }}</a>
+                </div>
             </div>
         @endforeach
     </div>
