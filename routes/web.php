@@ -40,6 +40,12 @@ Route::get('/', function () {
     return view('pages.homepage', compact('brands'));
 })->name('home');
 
+Route::get('/category', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.category', ['brands' => $brands]);
+})->name('category');
+
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
