@@ -5594,6 +5594,39 @@ a.badge-dark.focus {
     border-radius: 0.25rem;
 }
 
+.letter-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.letter-label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.letter-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.letter-select:hover {
+    border-color: #888;
+}
+
+.letter-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .alert-heading {
     color: inherit;
 }
