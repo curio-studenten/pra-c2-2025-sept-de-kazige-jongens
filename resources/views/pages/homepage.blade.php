@@ -40,5 +40,4 @@
             </select>
         </div>
     </div>
-
 </x-layouts.app>

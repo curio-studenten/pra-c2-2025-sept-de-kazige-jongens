@@ -53,6 +53,18 @@ Route::get('/', function () {
 })->name('home');
 Route::get("/home/{brand_letter}",[BrandListController::class, 'show']);
 
+Route::get('/category', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.category', ['brands' => $brands]);
+})->name('category');
+
+
+Route::get('/category', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.category', ['brands' => $brands]);
+})->name('category');
+
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
