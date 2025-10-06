@@ -59,4 +59,14 @@
         </div>
 
     </div>
+<<<<<<< Updated upstream
 </x-layouts.app>
+=======
+
+
+<<<<<<< Updated upstream
+</x-layouts.app>
+>>>>>>> Stashed changes
+=======
+</x-layouts.app>
+>>>>>>> Stashed changes
