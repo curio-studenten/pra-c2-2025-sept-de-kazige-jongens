@@ -20,7 +20,7 @@
     ?>
 
     <div class="container">
-        <h2>Top 10 handleidingen</h2>
+        <h2>{{__('introduction_texts.top_10_manuals')}}</h2>
         @foreach($topManuals as $manual)
             <div>
                 <div>{{ $manual->display_name }}</div>

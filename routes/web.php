@@ -59,7 +59,8 @@ Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed'
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 // Locale routes
-Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
+Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale'])
+    ->name('lang.switch');
 
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
