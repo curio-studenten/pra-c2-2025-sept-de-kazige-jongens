@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandListController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,7 @@ Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
     return view('pages.homepage', ['topManuals' => $results, 'brands' => $brands]);
 })->name('home');
+Route::get("/home/{brand_letter}",[BrandListController::class, 'show']);
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
