@@ -4,13 +4,14 @@
             <a class="navbar-brand" href="/" title="{{ __('misc.home_alt') }}">{{ __('misc.homepage_title') }}</a>
             <a class="navbar-brand" href="">|</a>
             <a class="navbar-brand" href="/contact">Contact</a>
+            <a class="navbar-brand" href="">|</a>
             <a class="navbar-brand" href="/category">Category</a>
 
         </div>
         <div id="navbar" class="form-inline">
 
             <script>
-                (function () {
+                (function() {
                     var cx = 'partner-pub-6236044096491918:8149652050';
                     var gcse = document.createElement('script');
                     gcse.type = 'text/javascript';
